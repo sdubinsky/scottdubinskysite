@@ -10,13 +10,13 @@ module Regex
   def self.generate_future_regexes
     def self.future_regexes binyan, name 
       {
-        /א#{binyan}/ => {tense: :future, person: :first, number: :singular, binyan: name, gender: :neuter},
-        /ת#{binyan}/ => {tense: :future, person: [:second, :third], number: :singular, binyan: name, gender: [:male, :female]},
-        /ת#{binyan.sub('ו', '')}י/ => {tense: :future, person: :second, number: :singular, binyan: name, gender: :female},
-        /י#{binyan}/ => {tense: :future, person: :third, number: :singular, binyan: name, gender: :neuter},
-        /נ#{binyan}/ => {tense: :future, person: :first, number: :singular, binyan: name, gender: :neuter},
-        /ת#{binyan.sub('ו', '')}ו/ => {tense: :future, person: :first, number: :singular, binyan: name, gender: :neuter},
-        /י#{binyan.sub('ו', '')}ו/ => {tense: :future, person: :first, number: :singular, binyan: name, gender: :neuter}
+        /^א#{binyan}$/ => {tense: :future, person: :first, number: :singular, binyan: name, gender: :neuter},
+        /^ת#{binyan}$/ => {tense: :future, person: [:second, :third], number: :singular, binyan: name, gender: [:male, :female]},
+        /^ת#{binyan.sub('ו', '')}י$/ => {tense: :future, person: :second, number: :singular, binyan: name, gender: :female},
+        /^י#{binyan}$/ => {tense: :future, person: :third, number: :singular, binyan: name, gender: :neuter},
+        /^נ#{binyan}$/ => {tense: :future, person: :first, number: :singular, binyan: name, gender: :neuter},
+        /^ת#{binyan.sub('ו', '')}ו$/ => {tense: :future, person: :first, number: :singular, binyan: name, gender: :neuter},
+        /^י#{binyan.sub('ו', '')}ו$/ => {tense: :future, person: :third, number: :singular, binyan: name, gender: :neuter}
       }
     end
 
@@ -48,8 +48,15 @@ module Regex
   end
 
   def self.generate_past_regexes
-    paal = /(...)/
-    piel = /(.)י(..)/
+    binyanim =
+      [[:paal, /(...)/],
+       [:nifal, /נ(...)/],
+       [:piel, /(.)י(..)/],
+       [:pual, /(.)ו(..)/],
+       [:hifil, /ה(..)י(.)/],
+       [:hufal, /הו(...)/],
+       [:hitpael, /הת(...)/]
+      ]
     past_endings =
       [
         {'תי' =>{tense: :past, person: :first, number: :singular, gender: :neuter}},
@@ -64,8 +71,10 @@ module Regex
     regexes = {}
     past_endings.each do |suffix|
       ending, form = suffix.keys[0], suffix.values[0]
-      regexes.merge!({/^#{paal}#{ending}$/ => form.merge({binyan: :paal})})
-      regexes.merge!({/^#{piel}#{ending}$/ => form.merge({binyan: :piel})})
+      binyanim.each do |binyan|
+        name, regex = binyan
+        regexes.merge!({/^#{regex}#{ending}$/ => form.merge({binyan: name})})
+      end
     end
 
     return regexes
