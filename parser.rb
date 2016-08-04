@@ -64,5 +64,3 @@ def fix_endings root
   return root
 end
 
-result = translate ARGV[0]
-puts result
