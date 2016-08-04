@@ -1,0 +1,12 @@
+<p>The single most complex part of learning Hebrew is remembering what all the verb mutations mean.  Current dictionaries simply translate the shoresh, leaving you guessing as to the actual meaning.  This milon attempts to take care of the other part.  Enter a verb-based Hebrew word and it will tell you time, person, gender, and a summary of the meaning of the binyan.  This is a work in progress.  There are no plans to support pure adjectives or nouns, although adjectives and nouns formed from verbs are supported.</p>
+
+<% if @translation %>
+    <div id="translation-div">
+        <p><%= @translation %></p>
+    </div>
+<% end %>
+
+<form>
+    Verb: <input type="text" name="verb" />
+    <input type="submit" value="Translate" />
+</form>

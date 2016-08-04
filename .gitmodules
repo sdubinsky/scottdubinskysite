@@ -1,0 +1,3 @@
+[submodule "milon"]
+	path = milon
+	url = git@github.com:sdubinsky/milon.git

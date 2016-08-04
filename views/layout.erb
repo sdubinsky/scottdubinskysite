@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Shalom Dubinsky</title>
+        <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div id="name">
+                Shalom Dubinsky
+            </div>
+            <div id="navbar">
+                <ul class="navbar-list">
+                    <li class="navbar-list-item"><a href="/">Home</a></li>
+                    <li class="navbar-list-item"><a href="/projects">Projects</a></li>
+                    <li class="navbar-list-item"><a href="/resume">Resume</a></li>
+                    <li class="navbar-list-item"><a href="/fencing">Fencing</a></li>
+                </ul>                
+            </div>
+        </header>
+        <div class="content">
+            <%= yield %>
+        </div>
+        <footer class="footer">
+            (c) 2016 Shalom Dubinsky
+
+
+        </footer>
+    </body>
+</html>
