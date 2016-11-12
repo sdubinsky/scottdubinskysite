@@ -1,6 +1,6 @@
-require_relative '../milon/parser'
+require 'milon'
 class MilonModel
   def self.translate word
-    return ::Parser.translate word
+    return ::Milon.translate word
   end
 end
