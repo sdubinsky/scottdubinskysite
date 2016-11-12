@@ -2,29 +2,39 @@ body{
     margin: 0;
     padding: 0;
     border: 0;
+    background-color: #F7F7F2;
+
 }
 
 
 .header{
     clear: both;
-    border-bottom: solid 1px;
     margin: 0;
     padding: 0;
     margin-bottom: 10px;
-    height: 60px;
-    background-color: #afafaf;
+    height: 100px;
+    background-color: #7B9EA8;
     position: fixed;
     width: 100%;
     top: 0px;
 }
 
 .header-content{
-    line-height: 60px;
+    line-height: 100px;
 }
+
+.header a:-webkit-any-link{
+    text-decoration: none;
+}
+
 .name{
     text-align: left;
     margin: 0;
+    text-transform: uppercase;
+    margin-left: 10%;
+    font-size: 1.5em;
     float: left;
+    color: #404040;
 }
 #navbar{
     margin: 0 auto;
@@ -36,18 +46,24 @@ body{
     padding: 0;
     margin: 0;
     list-style: none;
+    padding-right: 10px;
 }
 .navbar-list-item{
     display: inline-block;
     position: relative;
-    margin: 0 .7em 0 .7em;
+    margin: 0 3em 0 3em;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+    text-decoration: none;
+    
 }
 .content{
-    padding-top: 65px;
-    margin-left: 30%;
-    margin-right: 30%;
+    padding-top: 105px;
+    margin-left: 25%;
+    margin-right: 25%;
     height: 100%;
     font-family: sans-serif;
+    line-height: 1.2
 }
 .footer{
     clear: both;
@@ -57,9 +73,21 @@ body{
     right: 0;
     height: 50px;
     text-align: center;
-    background: #afafaf;
 }
 
 .footer-links{
     padding-top: 15px;
+}
+
+.resume-title{
+    float: left;
+    clear: both;
+}
+
+.resume-length{
+    float: right;
+}
+
+.resume-description{
+    clear: both;
 }
