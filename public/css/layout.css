@@ -12,16 +12,16 @@ body{
     margin: 0;
     padding: 0;
     margin-bottom: 10px;
-    height: 100px;
+    height: 80px;
     background-color: #F7F7F2;
     position: fixed;
     width: 100%;
     top: 0px;
-    
+    border-bottom: 1px solid;
 }
 
 .header-content{
-    line-height: 100px;
+    line-height: 80px;
 }
 
 .header a:-webkit-any-link{
