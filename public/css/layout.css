@@ -13,10 +13,11 @@ body{
     padding: 0;
     margin-bottom: 10px;
     height: 100px;
-    background-color: #7B9EA8;
+    background-color: #F7F7F2;
     position: fixed;
     width: 100%;
     top: 0px;
+    
 }
 
 .header-content{
@@ -25,6 +26,7 @@ body{
 
 .header a:-webkit-any-link{
     text-decoration: none;
+    color: #404040;
 }
 
 .name{
