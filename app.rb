@@ -4,6 +4,9 @@ require './models/milon'
 get '/' do
   erb :index
 end
+get '/home' do
+  redirect("/")
+end
 
 get '/projects' do
   erb :projects

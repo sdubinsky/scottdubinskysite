@@ -13,10 +13,11 @@
                 </div>
                 <div id="navbar">
                     <ul class="navbar-list">
-                        <li class="navbar-list-item"><a class="nav-link"  href="/">Home</a></li>
-                        <li class="navbar-list-item"><a class="nav-link"  href="/projects">Projects</a></li>
-                        <li class="navbar-list-item"><a class="nav-link"  href="/resume">Resume</a></li>
-                        <li class="navbar-list-item"><a class="nav-link"  href="/fencing">Fencing</a></li>
+                        <% navbar_items = ["Home", "Projects", "Resume", "Fencing"] %>
+                        <% navbar_items.each do |item| %>
+                            <li class="navbar-list-item">
+                                <a class="nav-link" href="/<%= item.downcase %>"><%= item %></a>
+                        <% end %>
                     </ul>                
                 </div>
             </div>
