@@ -16,7 +16,11 @@
                         <% navbar_items = ["Home", "Projects", "Resume", "Fencing"] %>
                         <% navbar_items.each do |item| %>
                             <li class="navbar-list-item">
-                                <a class="nav-link" href="/<%= item.downcase %>"><%= item %></a>
+                                <% if item.downcase == current_page %>
+                                    <a class="nav-link active" href="/<%= item.downcase %>"><%= item %></a>
+                                <% else %>
+                                    <a class="nav-link" href="/<%= item.downcase %>"><%= item %></a>
+                                <% end %>
                         <% end %>
                     </ul>                
                 </div>

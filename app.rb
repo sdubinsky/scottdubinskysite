@@ -2,22 +2,22 @@ require 'sinatra'
 require './models/milon'
 
 get '/' do
-  erb :index
+  erb :index, locals: {current_page: "home"}
 end
 get '/home' do
   redirect("/")
 end
 
 get '/projects' do
-  erb :projects
+  erb :projects, locals: {current_page: "projects"}
 end
 
 get '/resume' do
-  erb :resume
+  erb :resume, locals: {current_page: "resume"}
 end
 
 get '/fencing' do
-  erb :fencing  
+  erb :fencing, locals: {current_page: "fencing"}
 end
 
 get '/milon' do
