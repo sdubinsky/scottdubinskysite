@@ -64,6 +64,7 @@ body{
     position: relative;
     margin: 0 3em 0 3em;
     text-transform: uppercase;
+    font-family: sans-serif;
     -webkit-appearance: none;
     text-decoration: none;
     
