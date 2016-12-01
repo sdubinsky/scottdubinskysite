@@ -1,6 +1,8 @@
 require 'sinatra'
 require './models/milon'
 
+set :show_exceptions, false
+
 get '/' do
   erb :index, locals: {current_page: "home"}
 end
@@ -25,4 +27,8 @@ get '/milon' do
     @translation = MilonModel.translate params['verb']
   end
   erb :milon
+end
+
+not_found do
+  redirect("/")
 end
