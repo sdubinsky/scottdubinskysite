@@ -1,0 +1,10 @@
+<% blogposts = [{title: "title 1", content: "test content", tags:["tag1", "tag2"]}] %>
+
+<div class="blogpage">
+    <% blogposts.each do |post| %>
+        <h2><a href="/posts/<%= post[:title]%>"></h2>
+            <div class="postsnippet">
+                <%= post[:content][0:100]%>
+            </div>
+    <% end %>
+</div>

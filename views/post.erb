@@ -1,0 +1,9 @@
+<% post = {title: "title 1", content: "test content", tags: ["tag1", "tag2"], id: 0} %>
+
+<div class="blogpost">
+    <h2><%=post[:title]%></h2>
+    <div class="blogcontent">
+        <%= post[:content] %>
+        <%= params["id"] %>
+    </div>
+</div>
