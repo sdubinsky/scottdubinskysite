@@ -1,11 +1,12 @@
-<% blogposts = [{title: "title 1", content: "test content", tags:["tag1", "tag2"], id: 0},
-                {title: "title 2", content: "test content 2", tags:["tag1", "tag2"], id: 1}] %>
-
+<link rel="stylesheet" type="text/css" href="<%=url("css/posts.css")%>" />
 <div class="blogpage">
-    <% blogposts.each do |post| %>
-        <h3><a class="postlink" href="/posts/<%= post[:id]%>"> "<%= post[:title]%>" </a></h2>
+    <% if @blogposts.cmd_tuples == 0 %>
+        <h4>No posts found.</h4>
+    <% end %>
+    <% @blogposts.each do |post| %>
+        <h3><a class="postlink" href="/posts/<%= post["id"]%>"> <%= post["title"]%> </a></h2>
             <div class="postsnippet">
-                <%= post[:content][0..100]%>
+                <%= post["snippet"]%>
             </div>
     <% end %>
 </div>

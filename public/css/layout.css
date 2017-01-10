@@ -26,7 +26,6 @@ body{
 
 .header a:-webkit-any-link{
     opacity: 0.65;
-    text-decoration: none;
     color: #002266;
 }
 
@@ -109,3 +108,6 @@ body{
     clear: both;
 }
 
+a {
+    text-decoration: none;
+}

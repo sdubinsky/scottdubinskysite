@@ -1,5 +1,6 @@
 require 'sinatra'
 require './models/milon'
+require './models/blog'
 
 set :show_exceptions, true
 
@@ -30,9 +31,12 @@ get '/milon/?' do
 end
 
 get '/posts/?:id?' do
+  @blog = BlogModel.new()
   if params[:id]
+    @post = @blog.get_post params[:id]
     erb :post, locals: {current_page: "blog"}    
   else
+    @blogposts = @blog.get_posts
     erb :posts, locals: {current_page: "blog"}
   end
 

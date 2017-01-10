@@ -1,0 +1,8 @@
+.postlink {
+    margin: 0.8em;
+    text-transform: capitalize;
+}
+
+.postsnippet {
+    font-style: italic;
+}
