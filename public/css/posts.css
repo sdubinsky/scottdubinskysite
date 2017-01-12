@@ -1,3 +1,8 @@
+.posttitle {
+    padding: 1em;
+    font-size: 20px; 
+    border-bottom: 0.25px solid;
+}
 .postlink {
     margin: 0.8em;
     text-transform: capitalize;
