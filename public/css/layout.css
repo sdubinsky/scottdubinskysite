@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     border: 0;
-    background-color: #FAFAF4;
+    background-color: #EAEAEA;
 
 }
 
@@ -13,11 +13,12 @@ body{
     padding: 0;
     margin-bottom: 10px;
     height: 80px;
-    background-color: #FAFAF4;
+    background-color: #D3D3D3;
     position: fixed;
     width: 100%;
     top: 0px;
-    border-bottom: 1px solid;
+    border-bottom: 0.01em solid;
+    box-shadow: 1px 0.5px 8px;
 }
 
 .header-content{
@@ -110,4 +111,10 @@ body{
 
 a {
     text-decoration: none;
+}
+
+.selfie {
+    float: left;
+    clear: both;
+    margin: 10px;
 }

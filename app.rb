@@ -34,6 +34,9 @@ get '/posts/?:id?' do
   @blog = BlogModel.new()
   if params[:id]
     @post = @blog.get_post params[:id]
+    if @post.empty?
+      redirect("/posts")
+    end
     erb :post, locals: {current_page: "blog"}    
   else
     @blogposts = @blog.get_posts
