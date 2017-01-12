@@ -1,0 +1,12 @@
+h1 {
+    text-transform: uppercase;
+    color: #222222;
+}
+
+h2 {
+    text-transform: initial;
+    color: #222222;
+}
+.blogcontent {
+    color: #444444;
+}

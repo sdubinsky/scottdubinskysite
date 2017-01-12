@@ -4,9 +4,11 @@
         <h4>No posts found.</h4>
     <% end %>
     <% @blogposts.each do |post| %>
-        <h3><a class="postlink" href="/posts/<%= post["id"]%>"> <%= post["title"]%> </a></h2>
-            <div class="postsnippet">
-                <%= post["snippet"]%>
-            </div>
+        <div class="posttitle"
+            <h2><a class="postlink" href="/posts/<%= post["id"]%>"> <%= post["title"]%> </a></h2>
+        </div>
+        <div class="postsnippet">
+            <%= post["snippet"]%>
+        </div>
     <% end %>
 </div>
