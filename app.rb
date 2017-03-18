@@ -2,7 +2,9 @@ require 'sinatra'
 require './models/milon'
 require './models/blog'
 
-set :show_exceptions, true unless ENV['RACK_ENV'] == :production
+configure :development do
+  set :show_exceptions, true
+end
 
 get '/' do
   erb :index, locals: {current_page: "home"}
