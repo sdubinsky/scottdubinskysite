@@ -29,7 +29,7 @@ get '/milon/?' do
   if params['verb']
     @translation = MilonModel.translate params['verb']
   end
-  erb :milon
+  erb :milon, locals: {current_page: "milon"}
 end
 
 get '/posts/?:id?' do
