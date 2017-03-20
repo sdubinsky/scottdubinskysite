@@ -9,8 +9,8 @@ class BlogModel
     posts
   end
 
-  def get_post id
-    post = @connection.exec("SELECT * FROM blog WHERE id = #{id}").to_a
+  def get_post title
+    post = @connection.exec("SELECT * FROM blog WHERE title = '#{title}'").to_a
     post[0]
   end
 end
