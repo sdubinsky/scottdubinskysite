@@ -1,7 +1,7 @@
 require 'pg'
 class BlogModel
   def initialize
-    @connection = PG.connect(dbname: 'postgres')
+    @connection = PG.connect(ENV['DATABASE_URL'])
   end
 
   def get_posts
