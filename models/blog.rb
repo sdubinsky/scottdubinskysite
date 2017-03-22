@@ -10,6 +10,7 @@ class BlogModel
   end
 
   def get_post title
+    title = PG::Connection.escape_string title
     post = @connection.exec("SELECT * FROM blog WHERE title = '#{title}'").to_a
     post[0]
   end
