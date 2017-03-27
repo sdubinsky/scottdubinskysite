@@ -8,7 +8,7 @@ connection = PG.connect($db_url)
 
 filename = ARGV[0]
 $tags = ARGV[1..-1]
-$title = File.basename(filename, ".*")
+$title = File.basename(filename, ".*").gsub("_", " ").split(" ").join(" ")
 $post = File.read(filename)
 $now = Time.now
 command = "INSERT INTO blog (title, post, tags, uploaded_date) VALUES ('#{$title}', '#{$post.gsub("'", "''")}', '#{$tags.join(", ")}', '#{$now.strftime('%Y-%m-%d')}')"
