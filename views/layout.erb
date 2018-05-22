@@ -8,38 +8,37 @@
     <body>
         <header class="header">
             <div class="header-content">
-                <svg class="header-svg" >
-                    <path d="M0 100% Q50% 0 100% 100%" stroke="black" fill="transparent" />
-                    <circle cx="0" cy="100%" r="3"/>
-                    <circle cx="50%" cy="0" r="3"/>
-                    <circle cx="100%" cy="100%" r="3" />
-                </svg>
                 <div id="navbar">
                     <ul class="navbar-list">
                         <% navbar_items = ["Home", "Projects"] %>
-                        <% navbar_items.each do |item| %>
-                            <li class="navbar-list-item">
-                                <% if item.downcase == current_page %>
-                                    <a class="nav-link active" href="/<%= item.downcase %>"><%= item %></a>
-                                <% else %>
-                                    <a class="nav-link" href="/<%= item.downcase %>"><%= item %></a>
-                                <% end %>
-                            </li>
-                        <% end %>
+                        <ul class="mini-navbar-list navbar-list-item" >
+                            <% navbar_items.each do |item| %>
+                                <li class="mini-navbar-list-item">
+                                    <% if item.downcase == current_page %>
+                                        <a class="nav-link active" href="/<%= item.downcase %>"><%= item %></a>
+                                    <% else %>
+                                        <a class="nav-link" href="/<%= item.downcase %>"><%= item %></a>
+                                    <% end %>
+                                </li>
+                            <% end %>
+                        </ul>
                         <li class="navbar-list-item">
                             <span class="name">
                                 <img id="logo" src="img/fencinglungebannersmall.png" alt="Shalom Dubinsky" />
                             </span>
                         </li>
                         <% navbar_items = ["Resume", "Fencing"] %>
-                        <% navbar_items.each do |item| %>
-                            <li class="navbar-list-item">
-                                <% if item.downcase == current_page %>
-                                    <a class="nav-link active" href="/<%= item.downcase %>"><%= item %></a>
-                                <% else %>
-                                    <a class="nav-link" href="/<%= item.downcase %>"><%= item %></a>
-                                <% end %>
-                        <% end %>
+                        <ul class="mini-navbar-list navbar-list-item" >
+                            <% navbar_items.each do |item| %>
+                                <li class="mini-navbar-list-item">
+                                    <% if item.downcase == current_page %>
+                                        <a class="nav-link active" href="/<%= item.downcase %>"><%= item %></a>
+                                    <% else %>
+                                        <a class="nav-link" href="/<%= item.downcase %>"><%= item %></a>
+                                    <% end %>
+                                </li>
+                            <% end %>
+                        </ul>
                     </ul>
                 </div>
             </div>
