@@ -32,7 +32,7 @@ get '/milon/?' do
   erb :milon, locals: {current_page: "milon"}
 end
 
-get '/posts/?:title?' do
+get '/blog/?:title?' do
   @blog = BlogModel.new()
   begin
     if params[:title]
