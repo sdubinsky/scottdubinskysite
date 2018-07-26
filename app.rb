@@ -38,7 +38,7 @@ get '/blog/?:title?' do
     if params[:title]
       @post = @blog.get_post params[:title]
       if @post.empty?
-        redirect("/posts")
+        redirect to("/blog")
       end
       erb :post, locals: {current_page: "blog"}    
     else
@@ -47,11 +47,11 @@ get '/blog/?:title?' do
     end
   rescue ::PG::Error => e
     puts e
-    redirect "/"
+    redirect to("/")
   end
 end
 
 not_found do
   print "not found"
-  redirect("/")
+  redirect to("/")
 end
