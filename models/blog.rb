@@ -9,9 +9,9 @@ class BlogModel
     posts
   end
 
-  def get_post title
-    title = PG::Connection.escape_string title
-    post = @connection.exec("SELECT * FROM blog WHERE title = '#{title}'").to_a
+  def get_post id
+    id = PG::Connection.escape_string id
+    post = @connection.exec("SELECT * FROM blog WHERE id = '#{id}'").to_a
     post[0]
   end
 end
