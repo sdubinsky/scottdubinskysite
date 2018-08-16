@@ -1,11 +1,12 @@
 require 'sinatra'
-require './models/milon'
-require './models/blog'
+require 'sequel'
 
 configure :development do
   set :show_exceptions, true
 end
-
+connstr = ENV['DATABASE_URL'] || "postgres://localhost/sdubinskysite"
+DB = Sequel.connect connstr
+require './models/init'
 get '/' do
   erb :index, locals: {current_page: "home"}
 end
@@ -33,16 +34,13 @@ get '/milon/?' do
 end
 
 get '/blog/?:id?' do
-  @blog = BlogModel.new()
   begin
     if params[:id]
-      @post = @blog.get_post params[:id]
-      if @post.empty?
-        redirect to("/blog")
-      end
+      @post = Post[params[:id].to_i]
+      redirect to("/blog") unless @post
       erb :post, locals: {current_page: "blog"}    
     else
-      @blogposts = @blog.get_posts
+      @blogposts = Post.order_by(:timestamp).reverse
       erb :posts, locals: {current_page: "blog"}
     end
   rescue ::PG::Error => e

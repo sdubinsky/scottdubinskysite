@@ -1,17 +1,17 @@
 <link rel="stylesheet" type="text/css" href="<%=url("css/posts.css")%>" />
 <div class="blogpage">
-    <% if @blogposts.cmd_tuples == 0 %>
+    <% if @blogposts.count == 0 %>
         <h4>No posts found.</h4>
     <% end %>
     <% @blogposts.each do |post| %>
         <div class="posttitle"
-            <h2><a class="postlink" href="/blog/<%= post["id"]%>"> <%= post["title"]%> </a></h2>
+            <h2><a class="postlink" href="/blog/<%= post.id%>"> <%= post.title%> </a></h2>
         </div>
         <div class="postsnippet">
-            <%= post["snippet"]%>
+            <%= post.snippet%>
         </div>
         <div class="postdate">
-            <%= post["uploaded_date"]%>
+            <%= Time.strptime(post.timestamp.to_s, "%s").strftime("%B %e, %Y")%>
         </div>
     <% end %>
 </div>
