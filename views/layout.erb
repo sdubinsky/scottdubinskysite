@@ -22,11 +22,20 @@
                                 </li>
                             <% end %>
                         </ul>
-                        <li class="navbar-list-item">
-                            <span class="name">
-                                <img id="logo" src="<%=url("img/fencinglungebannersmall.png") %>" alt="Shalom Dubinsky" />
-                            </span>
-                        </li>
+                        <ul class="mini-navbar-list navbar-list-item">
+                            <li class="mini-navbar-list-item">
+                                <span class="name">
+                                    <img id="logo" src="<%=url("img/fencinglungebannersmall.png") %>" alt="Shalom Dubinsky" />
+                                </span>
+                            </li>
+                            <li class="mini-navbar-list-item">
+                                <% if current_page == "blog" %>
+                                    <a class="nav-link active" href="<%=url("/blog")%>">Blog</a>
+                                <% else %>
+                                    <a class="nav-link" href="<%=url("/blog")%>">Blog</a>
+                                <% end %>
+                            </li>
+                        </ul>
                         <% navbar_items = ["Resume", "Fencing"] %>
                         <ul class="mini-navbar-list navbar-list-item" >
                             <% navbar_items.each do |item| %>
