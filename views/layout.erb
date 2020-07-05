@@ -9,46 +9,51 @@
         <header class="header">
             <div class="header-content">
                 <div id="navbar">
-                    <ul class="navbar-list">
-                        <% navbar_items = ["Home", "Projects"] %>
-                        <ul class="mini-navbar-list navbar-list-item" >
-                            <% navbar_items.each do |item| %>
-                                <li class="mini-navbar-list-item">
-                                    <% if item.downcase == current_page %>
-                                        <a class="nav-link active" href="/<%= item.downcase %>"><%= item %></a>
-                                    <% else %>
-                                        <a class="nav-link" href="/<%= item.downcase %>"><%= item %></a>
-                                    <% end %>
-                                </li>
-                            <% end %>
-                        </ul>
-                        <ul class="mini-navbar-list navbar-list-item">
-                            <li class="mini-navbar-list-item">
-                                <span class="name">
-                                    <img id="logo" src="<%=url("img/fencinglungebannersmall.png") %>" alt="Shalom Dubinsky" />
-                                </span>
-                            </li>
-                            <li class="mini-navbar-list-item">
-                                <% if current_page == "blog" %>
-                                    <a class="nav-link active" href="<%=url("/blog")%>">Blog</a>
-                                <% else %>
-                                    <a class="nav-link" href="<%=url("/blog")%>">Blog</a>
-                                <% end %>
-                            </li>
-                        </ul>
-                        <% navbar_items = ["Resume", "Fencing"] %>
-                        <ul class="mini-navbar-list navbar-list-item" >
-                            <% navbar_items.each do |item| %>
-                                <li class="mini-navbar-list-item">
-                                    <% if item.downcase == current_page %>
-                                        <a class="nav-link active" href="/<%= item.downcase %>"><%= item %></a>
-                                    <% else %>
-                                        <a class="nav-link" href="/<%= item.downcase %>"><%= item %></a>
-                                    <% end %>
-                                </li>
-                            <% end %>
-                        </ul>
-                    </ul>
+                    <div class="mini-navbar-list-item">
+                        <% item = "Home" %>
+                        <% if item.downcase == current_page %>
+                            <a class="nav-link active" href="/<%= item.downcase %>"><%= item %></a>
+                        <% else %>
+                            <a class="nav-link" href="/<%= item.downcase %>"><%= item %></a>
+                        <% end %>
+                    </div>
+                    <div class="mini-navbar-list-item">
+                        <span class="name">
+                            <img id="logo" src="<%=url("img/fencinglungebannersmall.png") %>" alt="Shalom Dubinsky" />
+                        </span>
+                    </div>
+                    <div class="mini-navbar-list-item">
+                        <% item = "Projects" %>
+                        <% if item.downcase == current_page %>
+                            <a class="nav-link active" href="/<%= item.downcase %>"><%= item %></a>
+                        <% else %>
+                            <a class="nav-link" href="/<%= item.downcase %>"><%= item %></a>
+                        <% end %>
+                    </div>
+                    <div class="mini-navbar-list-item">
+                        <% item = "Blog" %>
+                        <% if item.downcase == current_page %>
+                            <a class="nav-link active" href="/<%= item.downcase %>"><%= item %></a>
+                        <% else %>
+                            <a class="nav-link" href="/<%= item.downcase %>"><%= item %></a>
+                        <% end %>
+                    </div>
+                    <div class="mini-navbar-list-item">
+                        <% item = "Resume" %>
+                        <% if item.downcase == current_page %>
+                            <a class="nav-link active" href="/<%= item.downcase %>"><%= item %></a>
+                        <% else %>
+                            <a class="nav-link" href="/<%= item.downcase %>"><%= item %></a>
+                        <% end %>
+                    </div>
+                    <div class="mini-navbar-list-item">
+                        <% item = "Fencing" %>
+                        <% if item.downcase == current_page %>
+                            <a class="nav-link active" href="/<%= item.downcase %>"><%= item %></a>
+                        <% else %>
+                            <a class="nav-link" href="/<%= item.downcase %>"><%= item %></a>
+                        <% end %>
+                    </div>
                 </div>
             </div>
         </header>

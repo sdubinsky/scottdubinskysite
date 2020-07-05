@@ -17,7 +17,7 @@ body{
 }
 
 .header-content{
-    line-height: 80px;
+    text-transform: uppercase;
 }
 
 .header a:-webkit-any-link{
@@ -35,7 +35,6 @@ body{
 
 #logo {
     height: 82px;
-    
 }
 
 .name{
@@ -46,16 +45,28 @@ body{
     color: #002266;
 }
 #navbar{
-    margin: 0 auto;
-    text-align: center;
+    display:grid;
+    grid-template-columns: repeat(3, 30%);
+    margin-left: 10%;
+    align-items: center;
+    justify-items: center;
 }
 
-.navbar-list{
+.navbar-row{
     padding: 0;
     margin: 0;
-    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
     padding-right: 10px;
 }
+
+.navbar-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
 .navbar-list-item{
     display: inline-block;
     position: relative;
@@ -69,6 +80,7 @@ body{
     list-style: none;
 }
 .content{
+    clear: both;
     padding-top: 105px;
     margin-left: 25%;
     margin-right: 25%;
