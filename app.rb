@@ -62,6 +62,18 @@ get '/blog/?:id?' do
   end
 end
 
+post '/submit-comment' do
+  Comment.create(
+    post_id: params['post-id'],
+    username: params['comment-form-username'],
+    title: params['comment-form-title'],
+    text: params['comment-form-body'],
+    created_date: Time.now.to_i
+  )
+  redirect "/blog/#{params['post-id']}"
+
+end
+
 not_found do
   print "not found"
   redirect to("/")

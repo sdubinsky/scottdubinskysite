@@ -10,3 +10,38 @@ h2 {
 .blogcontent {
     color: #444444;
 }
+
+.blog-comments {
+    border-top: 0.25px solid;
+}
+
+.comment-form {
+    display:flex;
+    flex-direction: column;
+}
+
+.comment-title {
+    text-transform: capitalize;
+}
+
+.comment-username {
+    font-style: italic;
+    text-transform: capitalize;
+    font-size: small;
+}
+
+#comment-form-title {
+    max-width: 20em;
+}
+
+#comment-form-username {
+    max-width: 20em;
+}
+
+#comment-form-body {
+    
+}
+
+.submit-btn {
+    max-width: 10em;
+}
