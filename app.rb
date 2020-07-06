@@ -50,12 +50,6 @@ get '/blog/?:id?' do
     if params[:id]
       @post = Post[params[:id].to_i]
       redirect to("/blog") unless @post
-      
-      View.create(
-        post: @post,
-        timestamp: Time.now.to_i,
-        viewer_ip: request.ip
-      ).save
       erb :post, locals: {current_page: "blog"}
       
     else
