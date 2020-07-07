@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>sdubinsky.com</title>
+        <link>https://sdubinsky.com</link>
+        <description>Personal blog of Shalom Dubinsky</description>
+        <language>en</language>
+        <% @posts.each do |post| %>
+            <item>
+                <title>
+                    <%= post.title.split.map{|a| a.capitalize}.join(" ") %>
+                </title>
+                <description>
+                    <%= post.snippet %>
+                </description>
+                <pubDate>
+                    <%= Time.strptime(post.timestamp.to_s, "%s").strftime("%A, %d %b %Y %H:%M:%S %z") %>
+                </pubDate>
+                <author>
+                    Shalom Dubinsky
+                </author>
+                <guid>
+                    "https://sdubinsky.com/blog/<%=post.id %>"
+                </guid>
+            </item>
+        <% end %>
+    </channel>
+</rss>

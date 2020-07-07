@@ -45,6 +45,12 @@ get '/milon/?' do
   erb :milon, locals: {current_page: "milon"}
 end
 
+get '/blog/rss' do
+  content_type 'text/xml'
+  @posts = Post.order_by(:timestamp).reverse
+  erb :rss, layout: false
+end
+
 get '/blog/?:id?' do
   begin
     if params[:id]
