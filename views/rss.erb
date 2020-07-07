@@ -13,9 +13,9 @@
                 <content type="html">
                     <%= post.post %>
                 </content>
-                <pubDate>
-                    <%= Time.strptime(post.timestamp.to_s, "%s").strftime("%A, %d %b %Y %H:%M:%S %z") %>
-                </pubDate>
+                <updated>
+                    <%= Time.strptime(post.timestamp.to_s, "%s").strftime("%Y-%m-%dT%H:%M:%S%z") %>
+                </updated>
                 <author>
                     Shalom Dubinsky
                 </author>
