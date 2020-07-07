@@ -22,12 +22,19 @@ h2 {
 
 .comment-title {
     text-transform: capitalize;
+    font-weight: bold;
 }
 
 .comment-username {
     font-style: italic;
     text-transform: capitalize;
     font-size: small;
+    margin-left: 1.5em;
+}
+
+.comment-body {
+    border-left: 0.25px solid;
+    padding-left: 0.8em;
 }
 
 #comment-form-title {

@@ -8,10 +8,10 @@
         <% @post.comments.each do |comment| %>
             <div class="comment">
                 <div class="comment-title">
-                    <h4><%= comment.title %></h4>
+                    <%= comment.title %>
                 </div>
                 <div class="comment-username">
-                    <%= comment.username %>
+                    - <%= comment.username %>
                 </div>
                 <div class="comment-body">
                     <%= comment.text %>
@@ -22,11 +22,11 @@
             <h4>Add a comment</h4>
             <form class="comment-form" action="/submit-comment" method="POST">
                 <label for="comment-form-title">Title</label>
-                <input type="text" id="comment-form-title" name="comment-form-title">
+                <input type="text" id="comment-form-title" name="comment-form-title" required>
                 <label for="comment-form-username">Author</label>
-                <input type="text" id="comment-form-username" name="comment-form-username">
+                <input type="text" id="comment-form-username" name="comment-form-username" required>
                 <label for="comment-form-body">Body</label>
-                <textarea id="comment-form-body" name="comment-form-body" rows="6">Be nice!
+                <textarea id="comment-form-body" name="comment-form-body" rows="6" required>Be nice!
                 </textarea>
                 <input type="text" value="<%=@post.id %>" hidden name="post-id">
                 <input type="Submit" value="Submit" class="submit-btn">
