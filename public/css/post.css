@@ -15,6 +15,10 @@ h2 {
     border-top: 0.25px solid;
 }
 
+.comment {
+    margin-bottom: 2em;
+}
+
 .comment-form {
     display:flex;
     flex-direction: column;
@@ -32,9 +36,19 @@ h2 {
     margin-left: 1.5em;
 }
 
+.comment-prompt {
+    text-transform: capitalize;
+    text-decoration: underline;
+    margin-bottom: 2em;
+}
+
 .comment-body {
     border-left: 0.25px solid;
     padding-left: 0.8em;
+}
+
+.comment-form-div {
+    margin-top: 3em;
 }
 
 #comment-form-title {
