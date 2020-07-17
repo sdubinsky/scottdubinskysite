@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Shalom's Blog</title>
         <link>https://sdubinsky.com/blog</link>
+        <atom:link href="https://sdubinsky.com/blog/rss" rel="self" type="application/rss+xml" />
         <description>Personal blog of Shalom Dubinsky</description>
         <language>en</language>
         <% @posts.each do |post| %>
@@ -23,9 +24,9 @@
                     <%= Time.strptime(post.timestamp.to_s, "%s").strftime("%a, %d %b %Y %H:%M:%S %z") %>
                 </pubDate>
                 <author>
-                    Shalom Dubinsky
+                    shalom@sdubinsky.com (Shalom Dubinsky)
                 </author>
-                <guid>blog/<%=post.id%></guid>
+                <guid>https://sdubinsky.com/blog/<%=post.id%></guid>
                 <link>https://sdubinsky.com/blog/<%=post.id%></link>
             </item>
         <% end %>
