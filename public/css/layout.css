@@ -40,15 +40,14 @@ body{
 .name{
     margin: 0;
     text-transform: uppercase;
-    margin-left: 2%;
-    font-size: 1.5em;
+    margin-bottom: 0.2em;
     color: #002266;
 }
 #navbar{
     display:grid;
-    grid-template-columns: repeat(3, 30%);
-    margin-left: 10%;
-    align-items: center;
+    grid-template-columns: repeat(5, 20%);
+    margin-top: 1em;
+    row-gap: 1rem;
     justify-items: center;
 }
 
@@ -79,6 +78,7 @@ body{
 .mini-navbar-list{
     list-style: none;
 }
+
 .content{
     clear: both;
     padding-top: 105px;
