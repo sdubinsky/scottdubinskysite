@@ -1,5 +1,8 @@
 <link rel="stylesheet" type="text/css" href="<%=url("css/posts.css")%>" />
 <div class="blogpage">
+    <div class="rss-subscribe">
+        <a href="/blog/rss"><img src="<%= url("img/rss-24.png") %>"></a>
+    </div>
     <% if @blogposts.count == 0 %>
         <h4>No posts found.</h4>
     <% end %>

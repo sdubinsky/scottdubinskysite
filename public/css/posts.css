@@ -20,3 +20,13 @@
 .uploaded_date {
     margin-left: 0.8em;
 }
+
+.rss-subscribe {
+    float: right;
+    text-align: center;
+}
+
+.rss-subscribe img {
+    width: 1em;
+    height: 1em;
+}
