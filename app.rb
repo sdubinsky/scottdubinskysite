@@ -77,7 +77,18 @@ post '/submit-comment' do
     created_date: Time.now.to_i
   )
   redirect "/blog/#{params['post-id']}"
+end
 
+post '/logging/?' do
+  country_code = env['HTTP_CF_IPCOUNTRY']
+  viewer_ip = env['HTTP_CF_CONNECTING_IP']
+  body = JSON.parse(@request.body.read)
+  View.create(
+    endpoint: body['endpoint'],
+    timestamp: Time.now.to_i,
+    country_code: country_code,
+    viewer_ip: viewer_ip
+  )
 end
 
 not_found do
