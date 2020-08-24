@@ -2,6 +2,23 @@
 <div class="blogpost">
     <div class="blogcontent">
         <%= @post.post %>
+        <div class="call-to-action">
+            Got questions?  Leave a comment.  Want more? Subscribe via <a href="https://sdubinsky.com/blog/rss">RSS</a>, or sign up below to get new posts directly in your inbox.  Otherwise, happy coding!
+        </div>
+    </div>
+    <div class="signup-form-div">
+        <!-- Begin Mailchimp Signup Form -->
+        <div id="mc_embed_signup">
+            <form action="https://sdubinsky.us17.list-manage.com/subscribe/post?u=e636de644f8d5c48a90769d14&amp;id=32ba6f520e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <label for="mce-EMAIL">Subscribe to the email list (no spam, promise)</label>
+                <div id="mc_embed_signup_scroll">
+	                  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_e636de644f8d5c48a90769d14_32ba6f520e" tabindex="-1" value=""></div>
+                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </div>
+            </form>
+        </div>
     </div>
     <div class="blog-comments">
         <h3>Comments</h3>
@@ -31,7 +48,6 @@
                 <textarea id="comment-form-body" name="comment-form-body" rows="6" required>Be nice!</textarea>
                 <input type="text" value="<%=@post.id %>" hidden name="post-id">
                 <input type="Submit" value="Submit" class="submit-btn">
-                </form>
             </form>
         </div>
     </div>

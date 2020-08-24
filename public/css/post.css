@@ -75,3 +75,16 @@ blockquote {
     margin-bottom: 1em;
     font-style: italic;
 }
+
+.call-to-action {
+    margin-bottom: 1em;
+}
+
+#mc_embed_signup_scroll {
+    display: flex;
+    margin-bottom: 3em;
+}
+
+#mce-EMAIL {
+    margin-right: 2em;
+}
