@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
-ruby '2.5.3'
+ruby '3.1.2'
 
 gem 'sinatra', '~> 2.0'
 gem 'sequel'
 gem 'rerun'
 gem 'milon', git: "https://github.com/sdubinsky/milon.git"
 gem 'pg'
-gem 'thin'
 gem 'rake'
 gem 'pry'
+gem 'puma'
