@@ -1,0 +1,12 @@
+- [1/2] bugfixes
+  - [X] change header to be grid, not a list
+  - [ ] add viewport tag to support mobile
+- [2/2] improvements
+  - [4/4] add comments to page
+    - [X] add comments table in db
+    - [X] add comments model in /models
+    - [X] add comments form to views/post.erb
+    - [X] display comments in views/post.erb
+  - [X] add rss link to /blog
+  - [X] add css for multiline code blocks
+  - add "schedule post" feature

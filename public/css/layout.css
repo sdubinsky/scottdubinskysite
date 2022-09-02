@@ -75,11 +75,12 @@ body{
     -webkit-appearance: none;
     text-decoration: none;
 }
+
 .mini-navbar-list{
     list-style: none;
 }
 
-.content{
+.content {
     clear: both;
     padding-top: 105px;
     margin-left: 25%;
@@ -87,6 +88,13 @@ body{
     height: 100%;
     font-family: sans-serif;
     line-height: 1.2
+}
+
+@media only screen and (max-width: 1000px) {
+  .content {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }
 .footer{
     clear: both;
