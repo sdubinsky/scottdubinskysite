@@ -1,4 +1,4 @@
-# fly.toml file generated for sdubinskysite on 2022-10-10T11:26:42+03:00
+# fly.toml file generated for sdubinskysite on 2022-10-10T16:18:20+03:00
 
 app = "sdubinskysite"
 kill_signal = "SIGINT"
@@ -7,6 +7,9 @@ processes = []
 
 [build]
   builder = "heroku/buildpacks:20"
+
+[deploy]
+  release_command = "bundle exec rake db:migrate"
 
 [env]
   PORT = "8080"
@@ -40,6 +43,3 @@ processes = []
     interval = "15s"
     restart_limit = 0
     timeout = "2s"
-
-[deploy]
-  release_command = "bundle exec rake db:migrate"
